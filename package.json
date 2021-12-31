@@ -11,9 +11,13 @@
   "license": "ISC",
   "dependencies": {
     "apollo-server": "^3.6.0",
+    "bcrypt": "^5.0.1",
+    "bcryptjs": "^2.4.3",
     "dotenv": "^10.0.0",
     "express-mongo-sanitize": "^2.1.0",
     "graphql": "^16.2.0",
-    "mongoose": "^6.1.4"
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.1.4",
+    "validator": "^13.7.0"
   }
 }
