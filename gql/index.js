@@ -1,12 +1,11 @@
-const bsocialProductResolver = require('./bsocialproductResolver')
-const usersResolvers = require('./user_resolvers');
-
+const bsocialProductResolver = require("./bsocialproductResolver");
+const usersResolvers = require("./user_resolvers");
 
 module.exports = {
   Query: {
-        ...usersResolvers.Query
-      },
+    ...bsocialProductResolvers.Query,
+  },
   Mutation: {
     ...usersResolvers.Mutation,
-  }
+  },
 };

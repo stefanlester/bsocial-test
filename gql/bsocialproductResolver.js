@@ -1,4 +1,4 @@
-const bsocialProduct = require('../../models/bsocialproduct');
+const bsocialProduct = require("../../models/bsocialproduct");
 
 module.exports = {
   Query: {
@@ -9,6 +9,6 @@ module.exports = {
       } catch (err) {
         throw new Error(err);
       }
-    }
-  }
+    },
+  },
 };

@@ -54,10 +54,7 @@ module.exports = {
       };
     },
     /**Register a new User */
-    async register(
-      _,
-      { registerInput: { username, email, password } }
-    ) {
+    async register(_, { registerInput: { username, email, password } }) {
       // Validate user data
       const { valid, errors } = validateRegisterInput(
         username,
