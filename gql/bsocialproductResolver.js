@@ -4,8 +4,8 @@ module.exports = {
   Query: {
     async getbsocialProduct() {
       try {
-        const posts = await bsocialProduct.find();
-        return posts;
+        const bsocialProduct_1 = await bsocialProduct.find();
+        return bsocialProduct_1;
       } catch (err) {
         throw new Error(err);
       }

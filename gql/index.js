@@ -1,4 +1,4 @@
-const bsocialProductResolver = require("./bsocialproductResolver");
+const bsocialProductResolvers = require("./bsocialproductResolver");
 const usersResolvers = require("./user_resolvers");
 
 module.exports = {
