@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const { model, Schema } = require('mongoose');
-const validator = require('validator');
+const validator = require('validator');  //to validate all inputs in user input field
 
 const userSchema = new mongoose.Schema({
   username: {
