@@ -23,6 +23,7 @@ function generateToken(user) {
 
 module.exports = {
   Mutation: {
+    /**Login a user */
     async login(_, { username, password }) {
       const { errors, valid } = validateLoginInput(username, password);
 
@@ -43,6 +44,7 @@ module.exports = {
         throw new UserInputError("Wrong crendetials", { errors });
       }
 
+      // Generate an access token
       const token = generateToken(user);
 
       return {
@@ -51,9 +53,10 @@ module.exports = {
         token,
       };
     },
+    /**Register a new User */
     async register(
       _,
-      { registerInput: { username, email, password, confirmPassword } }
+      { registerInput: { username, email, password } }
     ) {
       // Validate user data
       const { valid, errors } = validateRegisterInput(
@@ -64,7 +67,7 @@ module.exports = {
       if (!valid) {
         throw new UserInputError("Errors", { errors });
       }
-      // TODO: Make sure user doesnt already exist
+      //verify if username already exists
       const user = await User.findOne({ username });
       if (user) {
         throw new UserInputError("Username is taken", {
@@ -80,7 +83,6 @@ module.exports = {
         email,
         username,
         password,
-        createdAt: new Date().toISOString(),
       });
 
       const res = await newUser.save();
