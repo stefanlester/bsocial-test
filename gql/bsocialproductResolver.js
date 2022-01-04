@@ -38,7 +38,6 @@ module.exports = {
         body,
         user: user.id,
         username: user.username,
-        createdAt: new Date().toISOString(),
       });
 
       const bsocialProduct = await newbsocialProduct.save();
