@@ -7,5 +7,9 @@ module.exports = {
   },
   Mutation: {
     ...usersResolvers.Mutation,
+    ...bsocialProductResolvers.Mutation
   },
+  Subscription: {
+    ...bsocialProductResolvers.Subscription
+  }
 };

@@ -22,11 +22,18 @@ module.exports = gql`
   }
 
   type Query {
-    getbsocialProduct: [bsocialProduct]
+    getbsocialProducts: [bsocialProduct]
+    getbsocialProduct(bsocialProductId: ID!): bsocialProduct 
   }
 
   type Mutation {
     register(registerInput: RegisterInput): User!
     login(username: String!, password: String!): User!
+    createbsocialProduct(body: String!): bsocialProduct!
+    deletebsocialProduct(bsocialProductId: ID!): String!
+  }
+
+  type Subscription {
+    newbscoialProduct: bsocialProduct!
   }
 `;
