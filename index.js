@@ -17,7 +17,7 @@ Content-Security-Policy
 Cache-Control
 Expect-CT
 Disable X-Powered-By */
-const rateLimiter = require('express-rate-limit'); //implemeted a rate limiter which we talked about in the interview
+//const rateLimiter = require('express-rate-limit'); //implemeted a rate limiter which we talked about in the interview
 const session = require('express-session'); //to prevent session hijacking
 
 app.use(cors());
@@ -25,13 +25,13 @@ app.use(xss());
 app.use(mongoSanitize());
 app.use(helmet());
 
-app.set('trust proxy', 1); //rate limiter implementation
-app.use(
-    rateLimiter({
-      windowMs: 15 * 60 * 1000,
-      max: 60,
-    })
-  );
+// app.set('trust proxy', 1); //rate limiter implementation
+// app.use(
+//     rateLimiter({
+//       windowMs: 15 * 60 * 1000,
+//       max: 60,
+//     })
+//   );
 
 app.use(session({
   secret: 'secret1',
